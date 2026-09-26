@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --learnx-navy: #112D4E;
+  --learnx-blue: #3F72AF;
+  --learnx-white: #FFFFFF;
+  --learnx-muted: rgba(17, 45, 78, 0.68);
+  --learnx-border: rgba(17, 45, 78, 0.12);
+  --learnx-wash: rgba(17, 45, 78, 0.04);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--learnx-navy);
+    background: var(--learnx-white);
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--learnx-white);
+    color: var(--learnx-navy);
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--learnx-navy);
+    letter-spacing: 0;
+  }
+
+  button, input, textarea, select {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--learnx-blue);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .learnx-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.125rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    cursor: pointer;
+  }
+
+  .learnx-button-primary {
+    background: var(--learnx-blue);
+    color: var(--learnx-white);
+  }
+
+  .learnx-button-primary:hover {
+    background: var(--learnx-navy);
+  }
+
+  .learnx-button-secondary {
+    background: var(--learnx-white);
+    border-color: var(--learnx-blue);
+    color: var(--learnx-navy);
+  }
+
+  .learnx-button-secondary:hover {
+    background: var(--learnx-blue);
+    color: var(--learnx-white);
+  }
+
+  .learnx-card {
+    border: 1px solid var(--learnx-border);
+    border-radius: 0.5rem;
+    background: var(--learnx-white);
+    box-shadow: 0 2px 8px rgba(17, 45, 78, 0.05);
+  }
+
+  .learnx-input {
+    border: 1px solid rgba(17, 45, 78, 0.2);
+    border-radius: 0.5rem;
+    background: var(--learnx-white);
+    color: var(--learnx-navy);
+  }
+
+  .learnx-input:focus {
+    border-color: var(--learnx-blue);
+    outline: 2px solid rgba(63, 114, 175, 0.18);
+    outline-offset: 1px;
+  }
+}
+
+@layer utilities {
+  :is(button, a)[class~="bg-[#112D4E]"] {
+    background-color: var(--learnx-blue) !important;
+    color: var(--learnx-white) !important;
+  }
+
+  :is(button, a)[class~="bg-[#112D4E]"]:hover {
+    background-color: var(--learnx-navy) !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: rgba(17, 45, 78, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 45, 78, 0.35);
+}
+
